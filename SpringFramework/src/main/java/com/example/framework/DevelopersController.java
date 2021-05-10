@@ -3,6 +3,7 @@ package com.example.framework;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -62,5 +63,18 @@ public class DevelopersController {
 		model.addAttribute("developers", repository.findAll());
 		return "redirect:/developers";
 	}
-
+	
+	@RequestMapping("/")
+	public String home() {
+		return ("<h1>Welcome to home </h1>");
+	}
+	@RequestMapping("/admin")
+	public String admin() {
+		return ("<h1>Welcome admin </h1>");
+	}
+	@RequestMapping("/user")
+	public String user() {
+		return ("<h1>Welcome user </h1>");
+	}
+	
 }
